@@ -2,9 +2,8 @@ from datetime import datetime
 import django
 from django.db import transaction
 from rest_framework import viewsets, permissions
-from rest_framework.generics import get_object_or_404
+from rest_framework.generics import get_object_or_404, GenericAPIView
 from rest_framework.response import Response
-from rest_framework.views import APIView
 
 from . import models
 from . import serializers
@@ -22,7 +21,7 @@ class SensorsDataViewset(viewsets.ModelViewSet):
             .filter(timestamp__gte=time_from).filter(timestamp__lte=time_to)
 
 
-class LoadData(APIView):
+class LoadData(GenericAPIView):
     def post(self, request):
         file_obj = request.data['file']
         well_number = file_obj.name.split(' ')[-1].split('.')[0]
@@ -39,7 +38,7 @@ class LoadData(APIView):
         return Response(status=204)
 
 
-class DeleteData(APIView):
+class DeleteData(GenericAPIView):
     def put(self, request):
         point_id = request.data.get('point_id')
         point_type = request.data.get('point_type')
