@@ -5,7 +5,6 @@ from pandas import ExcelFile
 
 def get_data_from_file(file):
     df = pd.read_excel(file, index_col=0)
-    print(df)
     df = df[1:]
     timestamps = df.index.values.tolist()
     pressure_before = df.iloc[:, 0]

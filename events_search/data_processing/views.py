@@ -2,6 +2,7 @@ from datetime import datetime
 import django
 from django.db import transaction
 from rest_framework import viewsets, permissions
+from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -36,3 +37,13 @@ class LoadData(APIView):
             return Response('Integrity error occurred', status=500)
 
         return Response(status=204)
+
+
+class DeleteData(APIView):
+    def put(self, request):
+        point_id = request.data.get('point_id')
+        point_type = request.data.get('point_type')
+        point_object = get_object_or_404(models.SensorsData, pk=point_id)
+        setattr(point_object, point_type, None)
+        point_object.save()
+        return Response('Resource updated successfully', status=204)
