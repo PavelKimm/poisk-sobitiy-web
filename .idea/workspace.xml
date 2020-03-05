@@ -14,6 +14,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1YNb0QQmaiRPRIIDEkuOCDQSzlM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -23,7 +24,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/events_search" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
@@ -34,10 +35,34 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="C:\Users\kimpa\Desktop\PyCharm Projects\poisk-sobitiy-web\events_search\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/events_search" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="events_search" type="Python.DjangoServer" factoryName="Django server">
+      <module name="poisk-sobitiy-web" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="poisk-sobitiy-web" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\kimpa\Desktop\PyCharm Projects\poisk-sobitiy-web\events_search\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/events_search" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="false" />
+      <option name="ADD_SOURCE_ROOTS" value="false" />
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
       <option name="host" value="" />
@@ -61,44 +86,50 @@
       <option name="presentableId" value="Default" />
       <updated>1582785775783</updated>
       <workItem from="1582785777253" duration="2278000" />
+      <workItem from="1583395415668" duration="245000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" width="1092" height="721" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582788060124">
+    <state x="414" y="175" width="1092" height="721" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583395646902">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" width="1092" height="721" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582788060124" />
+    <state x="414" y="175" width="1092" height="721" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583395646902" />
     <state x="694" y="297" key="EnvironmentVariablesDialog" timestamp="1582786566591">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="694" y="297" key="EnvironmentVariablesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582786566591" />
-    <state x="740" y="290" key="FileChooserDialogImpl" timestamp="1582788019004">
+    <state x="740" y="290" key="FileChooserDialogImpl" timestamp="1583395659621">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="290" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582788019004" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1582788135229">
+    <state x="740" y="290" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583395659621" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1583395660594">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582788135229" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1582788135229">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583395660594" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1583395660594">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582788135229" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1582788135229">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583395660594" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1583395660594">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582788135229" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1582788135229">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583395660594" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1583395660594">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582788135229" />
-    <state x="461" y="178" key="SettingsEditor" timestamp="1582786536943">
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583395660594" />
+    <state x="461" y="178" key="SettingsEditor" timestamp="1583395631965">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="178" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582786536943" />
+    <state x="461" y="178" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583395631965" />
   </component>
 </project>

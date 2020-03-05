@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'visualization',
     'data_processing',
     'rest_framework',
+    'rest_framework_mongoengine',
     'djoser',
     'rest_framework.authtoken',
 ]
