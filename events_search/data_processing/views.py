@@ -22,12 +22,12 @@ class SensorsDataViewset(viewsets.ModelViewSet):
 
 
 class LoadData(GenericAPIView):
-    serializer_class = serializers.SensorsDataSerializer
+    # serializer_class = serializers.LoadDataSerializer
 
     @staticmethod
     def post(request):
         file_obj = request.data['file']
-        well_number = file_obj.name.split(' ')[-1].split('.')[0]
+        well_number = ''.join([x for x in file_obj.name.split('.')[0] if x.isdigit()])
         well_cluster = request.data.get('well_cluster')
         oilfield = request.data.get('oilfield')
         timestamps, pressure_before, pressure_after, temperature_before, consumption_before = get_data_from_file(file_obj)
