@@ -1,6 +1,7 @@
 import pandas as pd
-from pandas import ExcelWriter
-from pandas import ExcelFile
+from datetime import datetime
+# from pandas import ExcelWriter
+# from pandas import ExcelFile
 
 
 def get_data_from_file(file):
@@ -12,3 +13,13 @@ def get_data_from_file(file):
     temperature_before = df.iloc[:, 2]
     consumption_before = df.iloc[:, 3]
     return timestamps, pressure_before, pressure_after, temperature_before, consumption_before
+
+
+def get_datetime_obj_from_string(date_string):
+    year = int(date_string.split(' ')[0].split('.')[2])
+    month = int(date_string.split(' ')[0].split('.')[1])
+    day = int(date_string.split(' ')[0].split('.')[0])
+    hour = int(date_string.split(' ')[1].split(':')[0])
+    minute = int(date_string.split(' ')[1].split(':')[1])
+    datetime_obj = datetime(year, month, day, hour, minute)
+    return datetime_obj

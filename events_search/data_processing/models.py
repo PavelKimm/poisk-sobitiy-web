@@ -18,6 +18,3 @@ class SensorsData(Document):
             {'fields': ('oilfield', 'well_cluster', 'well_number', 'timestamp'), 'unique': True}
         ]
     }
-
-    def __str__(self):
-        return f"{self.well_number} - {self.timestamp}"
