@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 
 class User(AbstractUser):
     first_name = models.CharField(
-        _('first_name'),
+        verbose_name=_('First name'),
         unique=False,
         max_length=32,
         validators=[validators.RegexValidator(r'[A-Za-z]{1,32}')],
@@ -16,7 +16,7 @@ class User(AbstractUser):
         },
     )
     patronymic = models.CharField(
-        _('patronymic'),
+        verbose_name=_('Patronymic'),
         null=True,
         unique=False,
         max_length=32,
@@ -24,7 +24,7 @@ class User(AbstractUser):
         help_text=_('отчество'),
     )
     last_name = models.CharField(
-        _('last_name'),
+        verbose_name=_('Last name'),
         unique=False,
         max_length=32,
         validators=[validators.RegexValidator(r'[A-Za-z]{1,32}')],
@@ -34,7 +34,7 @@ class User(AbstractUser):
         },
     )
     username = models.CharField(
-        _('username'),
+        verbose_name=_('Username'),
         unique=True,
         max_length=64,
         validators=[validators.RegexValidator(r'[A-Za-z]{1,32}')],
@@ -44,8 +44,8 @@ class User(AbstractUser):
         },
         blank=True,
     )
-    password = models.CharField(_('password'), max_length=128, blank=True)
-    password_text = models.CharField(_('password_text'), max_length=128, blank=True)
+    password = models.CharField(verbose_name=_('Password'), max_length=128, blank=True)
+    password_text = models.CharField(verbose_name=_('Password'), max_length=128, blank=True)
 
     def __str__(self):
         return self.username

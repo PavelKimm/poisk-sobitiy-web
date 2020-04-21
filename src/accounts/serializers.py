@@ -1,7 +1,5 @@
 from django.db.transaction import atomic
 from rest_framework import serializers
-from django.core import serializers as django_serializers
-import json
 
 from src.conf import settings
 from . import models
