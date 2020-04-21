@@ -1,7 +1,5 @@
 import pandas as pd
 from datetime import datetime
-# from pandas import ExcelWriter
-# from pandas import ExcelFile
 
 
 def get_data_from_file(file):

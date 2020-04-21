@@ -15,7 +15,6 @@ urlpatterns = [
         'delete': 'destroy',
     })),
 
-
     path('password/change/', PasswordChangeView.as_view(), name='rest_password_change'),
     path('password/reset/', PasswordResetView.as_view(), name='rest_password_reset'),
     # path('password/reset/confirm/', PasswordResetConfirmView.as_view(),
