@@ -1,9 +1,10 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets, status
+from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 
 from src import views
-from src.accounts import serializers
+from src.accounts import serializers, models
 
 
 class UsersViewSet(views.AdminView, viewsets.ModelViewSet):
@@ -41,3 +42,16 @@ class UsersViewSet(views.AdminView, viewsets.ModelViewSet):
         if instance == self.request.user:
             return Response(status=status.HTTP_403_FORBIDDEN)
         super().perform_destroy(instance)
+
+
+class LockUnlockUser(GenericAPIView, views.AdminView):
+    @staticmethod
+    def post(request):
+        username = request.data.get('username')
+        user = models.User.objects.filter(username=username).get()
+        if user.is_active:
+            user.lock()
+            return Response(f'{user.username} has been locked', status=200)
+        else:
+            user.unlock()
+            return Response(f'{user.username} has been unlocked', status=200)

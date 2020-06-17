@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'rest_framework_mongoengine',
     'rest_framework.authtoken',
     'djoser',
+    'src.frontend',
 ]
 
 REST_FRAMEWORK = {
@@ -53,9 +54,9 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ),
-    # 'DEFAULT_PERMISSION_CLASSES': (
-    #     'rest_framework.permissions.IsAuthenticated',
-    # ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
 }
 
 MIDDLEWARE = [

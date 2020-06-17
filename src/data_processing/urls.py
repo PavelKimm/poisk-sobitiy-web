@@ -14,4 +14,6 @@ urlpatterns = [
          '<int:well_number>/', data_views.SensorsDataList.as_view(), name='sensors-data'),
 
     path('delete/', data_views.DeleteData.as_view(), name='delete-data'),
+    path('delete-docs/', data_views.DeleteDocs.as_view(), name='delete-docs'),
+
 ]

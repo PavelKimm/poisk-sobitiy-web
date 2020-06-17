@@ -19,6 +19,8 @@ class UserSerializer(serializers.ModelSerializer):
             'patronymic',
             'last_name',
             'is_active',
+            'email',
+            'is_staff'
         )
         extra_kwargs = {
             'password': {'write_only': True}
@@ -32,6 +34,9 @@ class UserSerializer(serializers.ModelSerializer):
             except KeyError:
                 patronymic = None
             last_name = validated_data.pop('last_name')
+            email = validated_data.pop('email')
+            is_staff = validated_data.pop('is_staff')
+            print(is_staff)
 
             username = utils.generate_username(first_name, patronymic, last_name)
             password = utils.generate_password(settings.DEFAULT_PASSWORD_LENGTH)
@@ -44,6 +49,8 @@ class UserSerializer(serializers.ModelSerializer):
                 first_name=first_name,
                 patronymic=patronymic,
                 last_name=last_name,
+                email=email,
+                is_staff=is_staff,
                 **validated_data
             )
         return user

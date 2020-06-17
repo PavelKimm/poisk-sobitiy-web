@@ -2,7 +2,7 @@ from django.contrib.auth import views
 from django.urls import path
 from rest_auth.views import PasswordChangeView, PasswordResetView  #, PasswordResetConfirmView
 
-from .views import UsersViewSet
+from .views import UsersViewSet, LockUnlockUser
 
 
 urlpatterns = [
@@ -14,6 +14,7 @@ urlpatterns = [
         'patch': 'partial_update',
         'delete': 'destroy',
     })),
+    path('lock-unlock-user/', LockUnlockUser.as_view(), name='lock-unlock-user'),
 
     path('password/change/', PasswordChangeView.as_view(), name='rest_password_change'),
     path('password/reset/', PasswordResetView.as_view(), name='rest_password_reset'),

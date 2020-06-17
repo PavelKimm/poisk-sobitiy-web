@@ -27,6 +27,7 @@ patterns = [
 ]
 
 urlpatterns = i18n_patterns(
+    path('', include('src.frontend.urls')),
     path('admin/', admin.site.urls),
     path('api/v1/', include(patterns)),
     prefix_default_language=False,

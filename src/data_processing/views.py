@@ -1,9 +1,10 @@
+from math import isnan
+
 import mongoengine
 from django.db import transaction
 from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import ListModelMixin
 from rest_framework.response import Response
-from math import isnan
 
 from . import models
 from . import serializers
@@ -20,16 +21,18 @@ class SensorsDataList(ListModelMixin, GenericAPIView):
     def filter_queryset(self, queryset):
         time_from = self.request.query_params.get('time_from')
         time_to = self.request.query_params.get('time_to')
+        if time_from == "null":
+            time_from = None
+        if time_to == "null":
+            time_to = None
         if time_from:
             time_from = get_datetime_obj_from_string(time_from)
         else:
             time_from = datetime(1, 1, 1)
-
         if time_to:
             time_to = get_datetime_obj_from_string(time_to)
         else:
             time_to = datetime.now()
-
         return queryset.filter(oilfield=self.kwargs['oilfield'],
                                well_cluster=self.kwargs['well_cluster'],
                                well_number=self.kwargs['well_number'],
@@ -43,6 +46,7 @@ class LoadData(GenericAPIView):
     @staticmethod
     def post(request):
         file_obj = request.data['file']
+        print(file_obj)
         well_number = request.data.get('well_number')
         well_cluster = request.data.get('well_cluster')
         oilfield = request.data.get('oilfield')
@@ -91,10 +95,10 @@ class DeleteData(GenericAPIView):
 
 
 class OilfieldList(GenericAPIView):
-    queryset = models.SensorsData.objects.distinct('oilfield')
+    queryset = models.SensorsData.objects
 
     def get(self, request):
-        return Response(self.queryset)
+        return Response(self.queryset.distinct('oilfield'))
 
 
 class WellClusterList(GenericAPIView):
@@ -111,3 +115,25 @@ class WellNumberList(GenericAPIView):
         return Response(self.queryset.
                         filter(oilfield=oilfield, well_cluster=well_cluster).
                         distinct('well_number'))
+
+
+class DeleteDocs(GenericAPIView):
+    @staticmethod
+    def delete(request):
+        oilfield = request.data.get('oilfield')
+        well_cluster = request.data.get('well_cluster')
+        well_number = request.data.get('well_number')
+        if well_number and well_cluster and oilfield:
+            docs = models.SensorsData.objects(oilfield=oilfield,
+                                              well_cluster=well_cluster,
+                                              well_number=well_number)
+            response = Response('The whole well deleted successfully', status=204)
+        elif well_cluster and oilfield:
+            docs = models.SensorsData.objects(oilfield=oilfield,
+                                              well_cluster=well_cluster)
+            response = Response('The whole cluster deleted successfully', status=204)
+        else:
+            docs = models.SensorsData.objects(oilfield=oilfield)
+            response = Response('The whole oilfield deleted successfully', status=204)
+        docs.delete()
+        return response

@@ -56,6 +56,9 @@ msgstr "Пожалуйста, введите свою фамилию"
 msgid "Username"
 msgstr "Логин"
 
+msgid "UNABLE TO LOG IN WITH PROVIDED CREDENTIALS."
+msgstr "НЕВОЗМОЖНО ВОЙТИ С ПРЕДОСТАВЛЕННЫМИ ДАННЫМИ."
+
 #: src/accounts/models.py:41
 msgid "логин"
 msgstr "Логин"
@@ -98,7 +101,7 @@ msgstr "На данной странице нет результатов"
 
 #: venv/lib/python3.7/site-packages/django/core/validators.py:32
 msgid "Enter a valid value."
-msgstr "Введите валидное число."
+msgstr "Введите валидное значение."
 
 #: venv/lib/python3.7/site-packages/django/core/validators.py:103
 #: venv/lib/python3.7/site-packages/django/forms/fields.py:659
