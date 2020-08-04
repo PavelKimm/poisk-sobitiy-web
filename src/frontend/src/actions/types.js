@@ -1,0 +1,17 @@
+export const GET_USERS = "GET_USERS";
+export const BLOCK_USER = "BLOCK_USER";
+export const ADD_USER = "ADD_USER";
+export const GET_ERRORS = "GET_ERRORS";
+export const CREATE_MESSAGE = "CREATE_MESSAGE";
+export const USER_LOADING = "USER_LOADING";
+export const USER_LOADED = "USER_LOADED";
+export const AUTH_ERROR = "AUTH_ERROR";
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGIN_FAIL = "LOGIN_FAIL";
+export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
+export const GET_OILFIELDS = "GET_OILFIELDS";
+export const GET_WELL_CLUSTERS = "GET_WELL_CLUSTERS";
+export const GET_WELL_NUMBERS = "GET_WELL_NUMBERS";
+export const DATA_LOADING = "DATA_LOADING";
+export const DATA_LOADED = "DATA_LOADED";
+export const DATA_WAS_VISUALIZED = "DATA_WAS_VISUALIZED";
